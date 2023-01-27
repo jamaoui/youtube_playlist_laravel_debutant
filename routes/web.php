@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\homeController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +27,4 @@ Utilisateur = > nom : jamaoui , prenom : mouad
 
 
 */
-Route::get('/salam/{nom}/{prenom}', function (Request $request) {
-    return view('salam',[
-        'nom'=> $request->nom,
-        'prenom'=> $request->prenom
-    ]);
-});
+Route::get('/', [homeController::class,'index']);
