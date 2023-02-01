@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Profile;
+
 return [
 
     /*
@@ -60,15 +62,16 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
+        //'users' => [
+        //    'driver' => 'eloquent',
+        //    'model' => App\Models\User::class,
+        //],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'users' => [
+             'driver' => 'eloquent',
+             'table' => 'profiles',
+             'model' => Profile::class
+         ],
     ],
 
     /*
