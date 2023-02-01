@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 class homeController extends Controller
 {
     public function index(Request $request) {
-        $nom = "Jamaoui";
-        $prenom = "Mouad";
-        //$languages = [];
-        $languages = ['PHP', 'LARAVEL', 'SYMFONY', 'React.js', 'MYSQL'];
-        return view('home',compact('nom','languages','prenom'));
-        //compact('nom','languages')
+        $users = [
+            ['id'=> '1','nom'=> 'jamaoui','metier'=> 'Expert technique'],
+            ['id'=> '2','nom'=> 'saidi','metier'=> 'Directeur'],
+            ['id'=> '3','nom'=> 'salimi','metier'=> 'Jardinier'],
+        ];
+       return view('home',compact('users'));
     }
 }
